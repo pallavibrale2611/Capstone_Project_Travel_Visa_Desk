@@ -1,0 +1,62 @@
+visa_types:
+  - business
+  - tourist
+  - work
+  - student
+  - transit
+  - diplomatic
+
+approval_workflow:
+  business:
+    - stage: "hr_review"
+      approver_role: "hr_manager"
+      required: true
+    - stage: "legal_review"
+      approver_role: "legal_counsel"
+      required: true
+    - stage: "management_approval"
+      approver_role: "department_head"
+      required: true
+  
+  work:
+    - stage: "hr_review"
+      approver_role: "hr_manager"
+      required: true
+    - stage: "legal_review"
+      approver_role: "legal_counsel"
+      required: true
+    - stage: "ceo_approval"
+      approver_role: "ceo"
+      required: true
+
+document_categories:
+  personal:
+    - passport
+    - passport_photos
+    - national_id
+    - birth_certificate
+  
+  employment:
+    - employment_letter
+    - salary_slips
+    - bank_statements
+    - tax_returns
+  
+  travel:
+    - flight_itinerary
+    - hotel_reservation
+    - travel_insurance
+  
+  visa_specific:
+    - invitation_letter
+    - sponsorship_letter
+    - proof_of_funds
+
+validation_rules:
+  passport:
+    - validity_months: 6
+    - blank_pages: 2
+  
+  bank_statement:
+    - recent_months: 3
+    - minimum_balance_multiplier: 100  # per day of stay

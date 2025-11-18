@@ -1,0 +1,36 @@
+api:
+  title: "Travel Visa Desk API"
+  description: "Corporate Immigration Visa Application Management System"
+  version: "1.0.0"
+  contact:
+    name: "IT Support"
+    email: "support@company.com"
+
+cors:
+  allow_origins:
+    - "http://localhost:3000"
+    - "http://localhost:8080"
+    - "http://localhost:8000"
+  allow_credentials: true
+  allow_methods:
+    - "*"
+  allow_headers:
+    - "*"
+
+rate_limiting:
+  default:
+    calls: 100
+    window: 60
+  
+  visa_application:
+    calls: 10
+    window: 60
+  
+  document_upload:
+    calls: 20
+    window: 60
+
+session_management:
+  timeout_minutes: 30
+  max_sessions_per_user: 5
+  auto_save_interval: 60

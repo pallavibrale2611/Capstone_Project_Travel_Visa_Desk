@@ -1,0 +1,45 @@
+connection:
+  host: "${MILVUS_URL}"
+  port: 19530
+  key: "${MILVUS_API_KEY}"
+  # password: "${MILVUS_PASSWORD}"
+  timeout: 120
+  milvus_uri: "${https://in03-95569f3f2c4d2b1.serverless.aws-eu-central-1.cloud.zilliz.com}"
+  token: "${21263d114e66c224140a0b61ff0ad6daf69676bc897ce24cb025515248f06fb48b90ffe993e44aaa0620cb7f771d9691c8dd861c}"
+
+collections:
+  visa_requirements:
+    name: "visa_requirements"
+    description: "Visa requirements by country and visa type"
+    dimension: 384
+    index_type: "IVF_FLAT"
+    metric_type: "L2"
+    nlist: 128
+    
+  embassy_info:
+    name: "embassy_information"
+    description: "Embassy contacts and processing information"
+    dimension: 384
+    index_type: "IVF_FLAT"
+    metric_type: "L2"
+    nlist: 128
+    
+  regulations:
+    name: "immigration_regulations"
+    description: "Immigration regulations and updates"
+    dimension: 384
+    index_type: "IVF_FLAT"
+    metric_type: "L2"
+    nlist: 128
+    
+  templates:
+    name: "document_templates"
+    description: "Letter templates and forms"
+    dimension: 384
+    index_type: "IVF_FLAT"
+    metric_type: "L2"
+    nlist: 128
+
+search_params:
+  top_k: 5
+  nprobe: 10
